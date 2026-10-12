@@ -1,0 +1,323 @@
+```html
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Digital Pro - Escala tu Negocio Digital</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hotmart: {
+                            orange: '#FF5722',
+                            darkOrange: '#E64A19',
+                            teal: '#00B4D8',
+                            darkTeal: '#0077B6',
+                            navy: '#0A192F',
+                            lightBg: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .pulse-btn {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 87, 34, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 87, 34, 0);
+            }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A192F 0%, #1E293B 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #FF5722 0%, #FF9800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-hotmart-lightBg text-slate-800 font-sans antialiased selection:bg-hotmart-orange selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-red-600 via-hotmart-orange to-amber-500 text-white text-xs sm:text-sm font-semibold py-2 px-4 text-center shadow-md relative z-40">
+        <div class="container mx-auto flex flex-wrap justify-center items-center gap-2">
+            <span class="inline-flex items-center bg-white/20 px-2 py-0.5 rounded text-xs uppercase tracking-wider font-extrabold animate-pulse">
+                <i class="fas fa-fire mr-1"></i> ¡Últimas Vacantes!
+            </span>
+            <span>Ofertón con 50% de descuento solo por HOY.</span>
+            <span class="hidden md:inline">|</span>
+            <button onclick="openLinkConfigModal()" class="underline hover:text-slate-100 font-bold ml-1 transition text-xs bg-black/20 px-2 py-0.5 rounded">
+                <i class="fas fa-cog mr-1"></i> Configurar Hotlink de Afiliado
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-30 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-hotmart-orange to-amber-400 flex items-center justify-center text-white text-xl font-bold shadow-md">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl text-slate-900 tracking-tight">MASTER<span class="text-hotmart-orange">PRO</span></span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="#beneficios" class="hover:text-hotmart-orange transition">Beneficios</a>
+                <a href="#temario" class="hover:text-hotmart-orange transition">Temario</a>
+                <a href="#para-quien" class="hover:text-hotmart-orange transition">¿Para quién es?</a>
+                <a href="#instructor" class="hover:text-hotmart-orange transition">Instructor</a>
+                <a href="#bonos" class="hover:text-hotmart-orange transition">Bonos</a>
+                <a href="#faq" class="hover:text-hotmart-orange transition">FAQ</a>
+            </div>
+
+            <a href="#precios" class="hotmart-btn bg-hotmart-orange hover:bg-hotmart-darkOrange text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl shadow-md transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                <span>INSCRIBIRSE AHORA</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white pt-12 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- Glow accents background -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-hotmart-orange/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 right-0 w-96 h-96 bg-hotmart-teal/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-amber-300 text-xs sm:text-sm font-semibold mb-6">
+                <i class="fas fa-star text-amber-400"></i>
+                <span>Programa Certificado #1 en Marketing Digital en Hotmart</span>
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                Domina el Marketing Digital desde Cero y Crea un <span class="text-gradient">Negocio Rentable</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 font-light leading-relaxed">
+                Aprende la metodología paso a paso para conseguir clientes masivos, vender infoproductos en automático y construir la libertad financiera que deseas este año.
+            </p>
+
+            <!-- Video / Mockup Placeholder Container -->
+            <div class="max-w-3xl mx-auto mb-8 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-slate-900 aspect-video relative group flex items-center justify-center">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80" alt="Vista previa del curso" class="w-full h-full object-cover opacity-60 group-hover:opacity-75 transition duration-300">
+                <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                    <button onclick="document.getElementById('precios').scrollIntoView({behavior:'smooth'})" class="w-20 h-20 bg-hotmart-orange hover:bg-hotmart-darkOrange text-white rounded-full flex items-center justify-center text-2xl shadow-2xl transition transform hover:scale-110 mb-3 pulse-btn">
+                        <i class="fas fa-play ml-1"></i>
+                    </button>
+                    <span class="bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold tracking-wide text-white border border-white/10">
+                        <i class="fas fa-lock text-green-400 mr-1"></i> Video Explicativo Completo (100% Gratuito)
+                    </span>
+                </div>
+            </div>
+
+            <!-- Countdown Timer Container -->
+            <div class="bg-slate-800/80 backdrop-blur-md border border-slate-700/80 rounded-2xl p-4 sm:p-6 max-w-xl mx-auto mb-8 shadow-xl">
+                <p class="text-xs sm:text-sm uppercase tracking-widest text-slate-400 mb-3 font-semibold">
+                    <i class="fas fa-clock text-hotmart-orange mr-1"></i> La oferta especial con 50% OFF expira en:
+                </p>
+                <div class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
+                    <div class="bg-slate-900/90 rounded-xl p-2 sm:p-3 border border-slate-700">
+                        <span id="timer-hours" class="font-heading font-black text-2xl sm:text-4xl text-hotmart-orange">03</span>
+                        <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-medium">Horas</span>
+                    </div>
+                    <div class="bg-slate-900/90 rounded-xl p-2 sm:p-3 border border-slate-700">
+                        <span id="timer-minutes" class="font-heading font-black text-2xl sm:text-4xl text-hotmart-orange">45</span>
+                        <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-medium">Minutos</span>
+                    </div>
+                    <div class="bg-slate-900/90 rounded-xl p-2 sm:p-3 border border-slate-700">
+                        <span id="timer-seconds" class="font-heading font-black text-2xl sm:text-4xl text-hotmart-orange">12</span>
+                        <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-medium">Segundos</span>
+                    </div>
+                    <div class="bg-slate-900/90 rounded-xl p-2 sm:p-3 border border-slate-700">
+                        <span id="timer-millis" class="font-heading font-black text-2xl sm:text-4xl text-hotmart-orange">80</span>
+                        <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-medium">Miliseg</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Main Button -->
+            <div class="space-y-4">
+                <a href="#precios" class="hotmart-btn pulse-btn inline-flex items-center justify-center w-full sm:w-auto px-8 py-5 text-lg sm:text-xl font-heading font-extrabold text-white bg-hotmart-orange hover:bg-hotmart-darkOrange rounded-2xl shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-bolt mr-3 text-amber-300"></i>
+                    ¡QUIERO OBTENER ACCESO INMEDIATO!
+                </a>
+                
+                <p class="text-xs sm:text-sm text-slate-400 flex items-center justify-center gap-4 flex-wrap">
+                    <span><i class="fas fa-shield-alt text-green-400 mr-1"></i> Garantía de 7 días</span>
+                    <span><i class="fas fa-lock text-slate-400 mr-1"></i> Pago 100% Seguro</span>
+                    <span><i class="fas fa-infinity text-blue-400 mr-1"></i> Acceso De Por Vida</span>
+                </p>
+            </div>
+
+            <!-- Trust Badges Bar -->
+            <div class="mt-12 pt-8 border-t border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-4 text-slate-300 text-xs sm:text-sm">
+                <div class="flex items-center justify-center space-x-2">
+                    <i class="fas fa-certificate text-xl text-hotmart-orange"></i>
+                    <span>Certificado Incluido</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                    <i class="fas fa-mobile-alt text-xl text-hotmart-teal"></i>
+                    <span>Acceso Móvil / TV</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                    <i class="fas fa-users text-xl text-emerald-400"></i>
+                    <span>+5,400 Alumnos</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                    <i class="fas fa-check-circle text-xl text-purple-400"></i>
+                    <span>Plataforma Hotmart</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Beneficios / Lo que aprenderás -->
+    <section id="beneficios" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-hotmart-orange font-bold mb-2">LO QUE APRENDERÁS</h2>
+                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
+                    Todo lo que necesitas para dominar el mercado digital
+                </p>
+                <div class="w-20 h-1.5 bg-hotmart-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-hotmart-orange/30 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-orange-100 text-hotmart-orange rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Estrategias de Tráfico Pago</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Aprende a configurar campañas efectivas en Meta Ads, Google Ads y TikTok Ads invirtiendo desde solo $1 dólar al día.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-hotmart-teal/30 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-teal-100 text-hotmart-teal rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fas fa-funnel-dollar"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Embudos de Ventas Automáticos</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Diseña sistemas que vendan por ti las 24 horas del día, los 7 días de la semana, incluso mientras duermes.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-amber-500/30 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Copywriting Persuasivo</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Escribe textos, guiones e historias altamente irresistibles que conviertan lectores en compradores inmediatos.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-emerald-500/30 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Escalamiento de Negocios</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Pasa de facturar tus primeros $100 dólares a más de $5,000 mensuales aplicando optimización avanzada de métricas.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-indigo-500/30 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Inteligencia Artificial para Ventas</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Utiliza ChatGPT y herramientas IA para crear contenido, guiones y anuncios en minutos sin esfuerzo.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-rose-500/30 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Estrategia Hotmart Orgánica</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Genera ventas sin gastar un solo centavo en publicidad usando TikTok, Instagram Reels y YouTube Shorts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Para quién es este curso? -->
+    <section id="para-quien" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-hotmart-teal font-bold mb-2">PERFIL DEL ALUMNO</h2>
+                <p class="font-heading text-3xl sm:text-4xl font-extrabold">
+                    ¿Este curso es realmente para ti?
+                </p>
+                <p class="text-slate-400 mt-3">Diseñado para adaptarse a diferentes niveles y metas profesionales.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Profile 1 -->
+                <div class="bg-slate-800/60 rounded-2xl p-6 border border-slate-700/80 hover:border-hotmart-orange transition">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-hotmart-orange/20 text-hotmart-orange rounded-full flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg">Principiantes Absolutos</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Si no tienes experiencia previa, no sabes nada de tecnología ni ventas, te guiamos de la mano desde lo más básico.
+                    </p>
+                </div>
+
+                <!-- Profile 2 -->
+                <div class="bg-slate-800/60 rounded-2xl p-6 border border-slate-700/80 hover:border-hotmart-teal transition">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-hotmart-teal/20 text-hotmart-teal rounded-full flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg">Emprendedores y Dueños</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Si ya tienes un negocio o servicio y quieres conseguir una avalancha constante de nuevos clientes calificados.
+                    </p>
+                </div>
+
+                <!-- Profile 3 -->
+                <div 
